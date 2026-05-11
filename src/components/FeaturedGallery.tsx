@@ -28,11 +28,11 @@ export function FeaturedGallery() {
             return (
               <Link
                 key={`${item.couple}-${idx}`}
-                href="/weddings"
+                href={`/weddings/${item.slug}`}
                 className={`image-frame group relative ${layout}`}
               >
                 <Image
-                  src={item.image}
+                  src={item.cover}
                   alt={`${item.couple} at ${item.venue}`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
@@ -73,9 +73,8 @@ function layoutFor(idx: number) {
     "col-span-2 lg:col-span-4 row-span-2",
     "col-span-2 lg:col-span-4 row-span-2",
     "col-span-2 lg:col-span-4 row-span-2",
-    "col-span-2 lg:col-span-7 row-span-2",
-    "col-span-2 lg:col-span-5 row-span-2",
-    "col-span-2 lg:col-span-12 row-span-2",
+    "col-span-2 lg:col-span-6 row-span-2",
+    "col-span-2 lg:col-span-6 row-span-2",
   ];
   return positions[idx % positions.length];
 }

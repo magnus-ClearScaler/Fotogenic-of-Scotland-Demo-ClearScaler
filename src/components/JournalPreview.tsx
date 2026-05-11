@@ -26,7 +26,7 @@ export function JournalPreview() {
           {featured.map((post) => (
             <Link
               key={post.slug}
-              href={`/journal`}
+              href={post.href}
               className="group block"
             >
               <div className="image-frame aspect-[4/5] relative">

@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { venues, regions } from "@/lib/site";
+import { galleries } from "@/lib/galleries";
 
 export function VenuesSection() {
+  const bg =
+    galleries["christa-jamie-crear"]?.[3] ??
+    galleries["alexandra-angus-mount-stuart"]?.[0] ??
+    "";
   return (
     <section className="bg-ink text-paper py-24 lg:py-36 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <Image
-          src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=2400&q=80"
+          src={bg}
           alt=""
           fill
           sizes="100vw"

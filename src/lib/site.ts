@@ -40,8 +40,7 @@ export const services = [
     sub: "Documentary fine art coverage",
     body:
       "Reportage-style storytelling and unobtrusive direction. Light-filled portraits, the quiet moments, the joy in between. Two photographers as standard, full digital gallery, artisan album options.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["alexandra-angus-mount-stuart"]?.[2] ?? "",
     href: "/weddings",
   },
   {
@@ -49,9 +48,8 @@ export const services = [
     title: "Wedding Films",
     sub: "Cinematic short films",
     body:
-      "A blend of photography and film. Two engaging short films — the highlight and the long-form. Honest sound, beautiful colour, edited like a story rather than a montage.",
-    image:
-      "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1600&q=80",
+      "A blend of photography and film. Two engaging short films, the highlight and the long-form. Honest sound, beautiful colour, edited like a story rather than a montage.",
+    image: galleries["kerry-fraser-lochgreen"]?.[3] ?? "",
     href: "/weddings",
   },
   {
@@ -60,8 +58,7 @@ export const services = [
     sub: "Fashion, hospitality, commercial",
     body:
       "Brand-led portraiture, food and interiors, fashion editorial. Carefully chosen locations and a distinctive eye for light. Clients include hotels, hospitality groups, designers and magazines.",
-    image:
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["india-gareth-glencoe-engagement"]?.[1] ?? "",
     href: "/lifestyle",
   },
   {
@@ -70,76 +67,164 @@ export const services = [
     sub: "Heirloom prints & storybooks",
     body:
       "Handmade albums designed to live on a coffee table, not a hard drive. Italian linen, embossed covers, archival prints. A family heirloom rather than a folder of files.",
-    image:
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["hannah-alexander-dumfries-house"]?.[4] ?? "",
     href: "/packages",
   },
 ] as const;
 
-export const featuredWeddings = [
+import { galleries } from "./galleries";
+
+export type FeaturedWedding = {
+  slug: string;
+  couple: string;
+  venue: string;
+  location: string;
+  date: string;
+  story: readonly string[];
+  details: readonly { label: string; value: string }[];
+  cover: string;
+  hero: string;
+};
+
+function pickCover(slug: string, index: number): string {
+  const g = galleries[slug];
+  return g?.[index] ?? g?.[0] ?? "";
+}
+
+export const featuredWeddings: readonly FeaturedWedding[] = [
   {
+    slug: "alexandra-angus-mount-stuart",
     couple: "Alexandra & Angus",
     venue: "Mount Stuart",
     location: "Isle of Bute",
-    image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80",
-    aspect: "portrait",
+    date: "May 2024",
+    story: [
+      "A spring wedding at Mount Stuart, the Marquess of Bute's Gothic family seat on the Isle of Bute. We started the morning in Rothesay, crossed the island in soft light, and photographed the bridal preparations in the Bute family wing.",
+      "The ceremony was held in the Marble Chapel, lit by stained glass that has thrown the same colour onto the same stones since 1880. Drinks in the Marble Hall, candles all the way down the long table for dinner, and a ceilidh that ran until the boat to the mainland.",
+      "A quiet day, kindly done. Some of the most beautiful light we have ever worked in.",
+    ],
+    details: [
+      { label: "Venue", value: "Mount Stuart, Isle of Bute" },
+      { label: "Season", value: "Late spring" },
+      { label: "Coverage", value: "Full day, two photographers, film" },
+      { label: "Album", value: "Storybook, 12 x 12 layflat" },
+    ],
+    cover: pickCover("alexandra-angus-mount-stuart", 0),
+    hero: pickCover("alexandra-angus-mount-stuart", 5),
   },
   {
+    slug: "sarah-robert-ardkinglas-house",
     couple: "Sarah & Robert",
     venue: "Ardkinglas House",
-    location: "Argyll",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80",
-    aspect: "landscape",
+    location: "Cairndow, Argyll",
+    date: "October 2023",
+    story: [
+      "A glen wedding in autumn copper, with a brief, perfect break in the rain for the portrait session in the woodland. Bagpipes on the lawn, sea mist drifting in off Loch Fyne, and an indoor ceremony in the panelled library.",
+      "Ardkinglas is one of our quietest, most magical venues. The chandelier in the dining room is older than the wedding industry itself. We photographed the day at its own pace and tried very hard not to break anything.",
+    ],
+    details: [
+      { label: "Venue", value: "Ardkinglas House, Argyll" },
+      { label: "Season", value: "Autumn" },
+      { label: "Coverage", value: "Full day, two photographers" },
+      { label: "Album", value: "Classic Album, leather" },
+    ],
+    cover: pickCover("sarah-robert-ardkinglas-house", 0),
+    hero: pickCover("sarah-robert-ardkinglas-house", 8),
   },
   {
+    slug: "kerry-fraser-lochgreen",
     couple: "Kerry & Fraser",
     venue: "Lochgreen House Hotel",
-    location: "Troon",
-    image:
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1600&q=80",
-    aspect: "portrait",
+    location: "Troon, South Ayrshire",
+    date: "July 2024",
+    story: [
+      "A summer wedding on the Ayrshire coast, with the Isle of Arran in the windows and a sea breeze through the marquee. Kerry and Fraser had three children between them already, all part of the ceremony, all on the dance floor.",
+      "A warm, loud, generous day. The kind of wedding that reminds you why people get married twice.",
+    ],
+    details: [
+      { label: "Venue", value: "Lochgreen House Hotel, Troon" },
+      { label: "Season", value: "Summer" },
+      { label: "Coverage", value: "Full day, two photographers" },
+      { label: "Album", value: "Box, 50 archival prints" },
+    ],
+    cover: pickCover("kerry-fraser-lochgreen", 0),
+    hero: pickCover("kerry-fraser-lochgreen", 6),
   },
   {
+    slug: "hannah-alexander-dumfries-house",
     couple: "Hannah & Alexander",
     venue: "Dumfries House",
-    location: "Ayrshire",
-    image:
-      "https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&w=1600&q=80",
-    aspect: "landscape",
+    location: "Cumnock, Ayrshire",
+    date: "September 2023",
+    story: [
+      "Dumfries House, restored by the King and run as a charitable estate, is one of the most extraordinary places in Scotland to be married. Hannah and Alexander took the whole house for the weekend, and we photographed every quiet hour of it.",
+      "The ceremony was held in the Tapestry Room. Dinner in the grand dining room beneath portraits of strangers. The first dance under the chandeliers. The album for this one is forty spreads long and we still cut it down.",
+    ],
+    details: [
+      { label: "Venue", value: "Dumfries House, Ayrshire" },
+      { label: "Season", value: "Early autumn" },
+      { label: "Coverage", value: "Two-day, two photographers, film" },
+      { label: "Album", value: "Storybook, 12 x 12, 40 spreads" },
+    ],
+    cover: pickCover("hannah-alexander-dumfries-house", 0),
+    hero: pickCover("hannah-alexander-dumfries-house", 10),
   },
   {
+    slug: "victoria-david-cornhill-castle",
     couple: "Victoria & David",
     venue: "Cornhill Castle",
-    location: "Biggar",
-    image:
-      "https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1600&q=80",
-    aspect: "portrait",
+    location: "Biggar, South Lanarkshire",
+    date: "June 2024",
+    story: [
+      "Cornhill is the kind of country-house wedding venue where you can lose half a wedding party in the gardens and find them an hour later in a glasshouse. Victoria and David let the day breathe in exactly that way.",
+      "A late June ceremony on the lawn, drinks under the trees, dinner in the orangery and dancing into the morning. We have rarely photographed a wedding party who laughed more.",
+    ],
+    details: [
+      { label: "Venue", value: "Cornhill Castle, Biggar" },
+      { label: "Season", value: "Midsummer" },
+      { label: "Coverage", value: "Full day, two photographers" },
+      { label: "Album", value: "Classic Album, linen" },
+    ],
+    cover: pickCover("victoria-david-cornhill-castle", 0),
+    hero: pickCover("victoria-david-cornhill-castle", 7),
   },
   {
+    slug: "christa-jamie-crear",
     couple: "Christa & Jamie",
     venue: "Crear",
     location: "Argyll Coast",
-    image:
-      "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80",
-    aspect: "landscape",
+    date: "August 2023",
+    story: [
+      "Crear sits on a cliff above the Sound of Jura. There is no village, no road past it, and a horizon that, on a clear evening, takes in three Hebridean islands at once.",
+      "Christa and Jamie were married outdoors, just before the wind came in off the sea. The whole weekend was a kind of held breath. Some of our favourite work, made very quietly.",
+    ],
+    details: [
+      { label: "Venue", value: "Crear, Argyll Coast" },
+      { label: "Season", value: "Late summer" },
+      { label: "Coverage", value: "Full weekend, two photographers" },
+      { label: "Album", value: "Storybook, 12 x 12 layflat" },
+    ],
+    cover: pickCover("christa-jamie-crear", 0),
+    hero: pickCover("christa-jamie-crear", 6),
   },
   {
+    slug: "india-gareth-glencoe-engagement",
     couple: "India & Gareth",
     venue: "Highland Engagement",
-    location: "Glencoe",
-    image:
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1600&q=80",
-    aspect: "portrait",
-  },
-  {
-    couple: "Iona & Alistair",
-    venue: "The Lovat Hotel",
-    location: "Fort Augustus",
-    image:
-      "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1600&q=80",
-    aspect: "landscape",
+    location: "Glencoe & the Three Sisters",
+    date: "February 2024",
+    story: [
+      "An engagement session in flat winter light at Glencoe. We borrowed a Land Rover from a friend, drove up early, and walked under the Three Sisters in a cold that made everyone hold on a little tighter.",
+      "An hour of pictures. A long warm lunch in Glen Coe village afterwards. The wedding is at Boturich Castle next year. We cannot wait.",
+    ],
+    details: [
+      { label: "Location", value: "Glencoe, Highlands" },
+      { label: "Season", value: "Winter" },
+      { label: "Coverage", value: "Half day, one photographer" },
+      { label: "Output", value: "Digital gallery, fine art prints" },
+    ],
+    cover: pickCover("india-gareth-glencoe-engagement", 0),
+    hero: pickCover("india-gareth-glencoe-engagement", 12),
   },
 ] as const;
 
@@ -295,63 +380,63 @@ export const testimonials = [
 
 export const journal = [
   {
-    slug: "mount-stuart-wedding-alexandra-angus",
+    slug: "alexandra-angus-mount-stuart",
     title: "A spring wedding at Mount Stuart. Alexandra & Angus",
     excerpt:
-      "Soft Bute light through Gothic windows, a quiet ceremony in the Marble Hall, and a candlelit dinner under the chapel ceiling.",
-    date: "2026-04-12",
+      "Soft Bute light through Gothic windows, a quiet ceremony in the Marble Chapel, and a candlelit dinner under the chapel ceiling.",
+    date: "2024-05-24",
     category: "Weddings",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["alexandra-angus-mount-stuart"]?.[1] ?? "",
+    href: "/weddings/alexandra-angus-mount-stuart",
   },
   {
-    slug: "ardkinglas-house-sarah-robert",
+    slug: "sarah-robert-ardkinglas-house",
     title: "Ardkinglas House. Sarah & Robert",
     excerpt:
       "A glen wedding in autumn copper. Bagpipes, sea mist, and a portrait session in the woodland just before the rain.",
-    date: "2026-03-02",
+    date: "2023-10-14",
     category: "Weddings",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["sarah-robert-ardkinglas-house"]?.[2] ?? "",
+    href: "/weddings/sarah-robert-ardkinglas-house",
   },
   {
-    slug: "wedding-albums-in-2026",
+    slug: "wedding-albums-2026",
     title: "Wedding albums in 2026. Why we still print",
     excerpt:
       "Notes from a year of designing albums. On Italian linen, on what to leave out, and on why the best image is rarely the obvious one.",
     date: "2026-02-14",
     category: "Studio Notes",
-    image:
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["hannah-alexander-dumfries-house"]?.[6] ?? "",
+    href: "/journal",
   },
   {
-    slug: "engagement-india-gareth-glencoe",
+    slug: "india-gareth-glencoe-engagement",
     title: "An engagement in Glencoe. India & Gareth",
     excerpt:
       "Three Sisters in flat winter light, a borrowed Land Rover, and the kind of cold that makes everyone hold on tighter.",
-    date: "2026-01-22",
+    date: "2024-02-11",
     category: "Lifestyle",
-    image:
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1600&q=80",
+    image: galleries["india-gareth-glencoe-engagement"]?.[3] ?? "",
+    href: "/weddings/india-gareth-glencoe-engagement",
   },
   {
-    slug: "lovat-hotel-film-iona-alistair",
-    title: "The Lovat Hotel. A short film",
+    slug: "kerry-fraser-lochgreen",
+    title: "A summer wedding on the Ayrshire coast. Kerry & Fraser",
     excerpt:
-      "A small Highland wedding, told in nine minutes. The full short film, with notes on the edit, the music, and what we cut.",
-    date: "2025-12-08",
-    category: "Films",
-    image:
-      "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1600&q=80",
+      "Sun on the marquee, the Isle of Arran in the windows, and the kind of dance floor that does not stop until the lights come up.",
+    date: "2024-07-20",
+    category: "Weddings",
+    image: galleries["kerry-fraser-lochgreen"]?.[5] ?? "",
+    href: "/weddings/kerry-fraser-lochgreen",
   },
   {
-    slug: "architecture-interiors-2025",
-    title: "Architecture & interiors. A 2025 portfolio",
+    slug: "christa-jamie-crear",
+    title: "Crear, on the edge of the world. Christa & Jamie",
     excerpt:
-      "Hospitality and editorial work from the year — restaurants, country houses, and a long-form piece for a heritage hotel.",
-    date: "2025-11-19",
-    category: "Lifestyle",
-    image:
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+      "A clifftop ceremony above the Sound of Jura. Three Hebridean islands on the horizon and a wind that came in just after the vows.",
+    date: "2023-08-12",
+    category: "Weddings",
+    image: galleries["christa-jamie-crear"]?.[1] ?? "",
+    href: "/weddings/christa-jamie-crear",
   },
 ] as const;

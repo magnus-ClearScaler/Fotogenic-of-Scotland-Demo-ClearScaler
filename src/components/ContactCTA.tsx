@@ -1,13 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { galleries } from "@/lib/galleries";
 
 export function ContactCTA() {
+  const bg =
+    galleries["hannah-alexander-dumfries-house"]?.[8] ??
+    galleries["alexandra-angus-mount-stuart"]?.[3] ??
+    "";
   return (
     <section className="relative py-32 lg:py-44 overflow-hidden bg-ink text-paper">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=2200&q=80"
+          src={bg}
           alt=""
           fill
           sizes="100vw"

@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { featuredWeddings } from "@/lib/site";
 
 export function IntroStatement() {
+  const portrait =
+    featuredWeddings.find((w) => w.slug === "alexandra-angus-mount-stuart")
+      ?.cover ?? featuredWeddings[0].cover;
   return (
     <section id="story" className="bg-cream py-24 lg:py-36">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
@@ -40,11 +44,12 @@ export function IntroStatement() {
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="image-frame aspect-[4/5] relative">
               <Image
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=85"
+                src={portrait}
                 alt="A quiet bridal portrait in soft Scottish daylight"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
+                quality={85}
               />
             </div>
             <p className="mt-5 text-[0.74rem] tracking-[0.22em] uppercase text-mute">

@@ -36,27 +36,27 @@ export default function WeddingsPage() {
                 "col-span-2 lg:col-span-4 row-span-2",
                 "col-span-2 lg:col-span-4 row-span-2",
                 "col-span-2 lg:col-span-4 row-span-2",
-                "col-span-2 lg:col-span-7 row-span-2",
-                "col-span-2 lg:col-span-5 row-span-2",
-                "col-span-2 lg:col-span-12 row-span-2",
+                "col-span-2 lg:col-span-6 row-span-2",
+                "col-span-2 lg:col-span-6 row-span-2",
               ];
               return (
                 <Link
-                  key={`${w.couple}-${idx}`}
-                  href="/contact"
+                  key={w.slug}
+                  href={`/weddings/${w.slug}`}
                   className={`image-frame group relative ${layouts[idx % layouts.length]}`}
                 >
                   <Image
-                    src={w.image}
+                    src={w.cover}
                     alt={`${w.couple} at ${w.venue}`}
                     fill
                     sizes="(max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
+                    loading={idx < 2 ? "eager" : "lazy"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7 text-paper">
                     <div className="text-[0.65rem] tracking-[0.28em] uppercase text-burnish-soft">
-                      {w.location}
+                      {w.location} · {w.date}
                     </div>
                     <div className="display text-2xl lg:text-3xl mt-1 kerning-tight">
                       {w.couple}

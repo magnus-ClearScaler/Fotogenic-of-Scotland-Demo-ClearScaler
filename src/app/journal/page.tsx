@@ -30,7 +30,7 @@ export default function JournalPage() {
       <section className="bg-cream py-16 lg:py-20">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <Link
-            href="/journal"
+            href={feature.href}
             className="group grid lg:grid-cols-12 gap-8 lg:gap-14 items-center"
           >
             <div className="lg:col-span-7 image-frame aspect-[5/3] relative">
@@ -75,7 +75,7 @@ export default function JournalPage() {
             {rest.map((post) => (
               <Link
                 key={post.slug}
-                href={`/journal`}
+                href={post.href}
                 className="group block"
               >
                 <div className="image-frame aspect-[4/5] relative">
