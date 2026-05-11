@@ -9,7 +9,7 @@ import { team } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About the Studio",
   description:
-    "About Fotogenic of Scotland — a Glasgow & Edinburgh wedding and lifestyle photography studio. Nineteen years in Scotland, 700 weddings, published in Vogue, Condé Nast and Marie Claire.",
+    "About Fotogenic of Scotland. A Glasgow and Edinburgh wedding and lifestyle photography studio. Nineteen years in Scotland, 700 weddings, published in Vogue, Condé Nast and Marie Claire.",
 };
 
 export default function AboutPage() {
@@ -50,10 +50,10 @@ export default function AboutPage() {
               <p className="eyebrow">Our story</p>
               <h2 className="display text-[2.4rem] lg:text-[3rem] mt-6 text-ink kerning-tight">
                 We started by photographing fashion, then fell in love with
-                weddings —
+                weddings.
                 <em className="script text-burnish-deep">
                   {" "}
-                  and never quite shook either out of the work.
+                  We never quite shook either out of the work.
                 </em>
               </h2>
               <div className="mt-9 space-y-5 text-charcoal leading-[1.8] text-[1.05rem]">

@@ -16,8 +16,8 @@ export default function ContactPage() {
         eyebrow="Begin an enquiry"
         title={
           <>
-            Tell us about the day —
-            <em className="script text-burnish-deep"> we will reply within 24 hours.</em>
+            Tell us about the day.
+            <em className="script text-burnish-deep"> We will reply within 24 hours.</em>
           </>
         }
         intro="Every enquiry comes to one of the photographers, not to an assistant. We reply with availability, a quote, and the full brochure within a day."

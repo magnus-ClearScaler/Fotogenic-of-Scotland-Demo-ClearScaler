@@ -30,7 +30,7 @@ export function VenuesSection() {
             </h2>
             <p className="mt-7 text-paper/75 leading-[1.7]">
               Glasgow and Edinburgh sit at the heart of the practice. From there
-              we travel across the country and beyond — and we know the venues
+              we travel across the country and beyond, and we know the venues
               well enough to plan the day around the best light.
             </p>
             <div className="mt-10">

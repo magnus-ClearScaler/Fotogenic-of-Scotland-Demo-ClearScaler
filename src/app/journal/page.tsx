@@ -6,7 +6,7 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { journal } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Journal — Wedding & Lifestyle Stories",
+  title: "Journal. Wedding & lifestyle stories",
   description:
     "Recent wedding stories, behind-the-scenes notes, and editorial features from the Fotogenic of Scotland journal.",
 };
@@ -20,8 +20,8 @@ export default function JournalPage() {
         eyebrow="The journal"
         title={
           <>
-            Long-form stories from the studio —
-            <em className="script text-burnish-deep"> weddings, films, the practice of seeing.</em>
+            Long-form stories from the studio.
+            <em className="script text-burnish-deep"> Weddings, films, the practice of seeing.</em>
           </>
         }
         intro="Recent weddings in detail, notes from the edit room, and a few essays on the craft. We publish around once a month."

@@ -4,7 +4,7 @@ export const site = {
   name: "Fotogenic of Scotland",
   tagline: "Wedding & lifestyle photography & film, Scotland",
   intro:
-    "Fine art Glasgow & Edinburgh wedding photographers and filmmakers. Honest, timeless, documentary coverage of the day — across Scotland, the Highlands & Islands, and destination weddings abroad.",
+    "Fine art Glasgow and Edinburgh wedding photographers and filmmakers. Honest, timeless, documentary coverage of the day. Across Scotland, the Highlands and Islands, and destination weddings abroad.",
   established: 2006,
   weddingsShot: 700,
   reviews: 175,
@@ -17,7 +17,7 @@ export const site = {
     postcode: "G3 7DX",
     country: "Scotland, UK",
   },
-  hours: "Monday – Saturday, 9am – 8pm",
+  hours: "Monday to Saturday, 9am to 8pm",
   social: {
     instagram: "https://www.instagram.com/fotogenicofscotland/",
     facebook: "https://www.facebook.com/fotogenicofscotland",

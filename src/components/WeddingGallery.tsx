@@ -29,7 +29,7 @@ export function WeddingGallery({
           >
             <Image
               src={src}
-              alt={`${alt} — photograph ${idx + 1}`}
+              alt={`${alt}, photograph ${idx + 1}`}
               fill
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 33vw"
               className="object-cover"

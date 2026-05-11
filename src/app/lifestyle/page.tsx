@@ -78,8 +78,8 @@ export default function LifestylePage() {
         eyebrow="Lifestyle · Editorial · Commercial"
         title={
           <>
-            Work beyond the wedding aisle —
-            <em className="script text-burnish-deep"> in studio, on location, in print.</em>
+            Work beyond the wedding aisle.
+            <em className="script text-burnish-deep"> In studio, on location, in print.</em>
           </>
         }
         intro="A second strand of the practice. The fashion-rooted eye behind our weddings, applied to hotels, hospitality, food, interiors and brand portraiture."
@@ -122,7 +122,7 @@ export default function LifestylePage() {
               </h2>
               <p className="mt-7 text-mute leading-[1.7]">
                 Commercial briefs from £950. Pitch us anything from a single
-                portrait to a season&rsquo;s campaign — we will tell you whether
+                portrait to a season&rsquo;s campaign. We will tell you whether
                 we are the right fit.
               </p>
             </div>

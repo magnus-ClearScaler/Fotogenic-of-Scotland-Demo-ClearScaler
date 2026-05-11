@@ -7,7 +7,7 @@ import { featuredWeddings } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Wedding Photography Scotland",
   description:
-    "Fine art documentary wedding photography across Scotland — Glasgow, Edinburgh, the Highlands & Islands. Selected weddings from the Fotogenic of Scotland portfolio.",
+    "Fine art documentary wedding photography across Scotland. Glasgow, Edinburgh, the Highlands and Islands. Selected weddings from the Fotogenic of Scotland portfolio.",
 };
 
 export default function WeddingsPage() {
@@ -18,7 +18,7 @@ export default function WeddingsPage() {
           <p className="eyebrow fade-up">Weddings</p>
           <h1 className="display text-ink text-[3.2rem] sm:text-[4.4rem] lg:text-[5.6rem] mt-6 kerning-tight leading-[1.02] fade-up fade-up-1">
             Selected weddings,
-            <em className="script text-burnish-deep"> 2023 – 2026.</em>
+            <em className="script text-burnish-deep"> 2023 to 2026.</em>
           </h1>
         </div>
       </section>

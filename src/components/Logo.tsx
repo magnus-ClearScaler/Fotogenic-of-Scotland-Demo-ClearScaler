@@ -12,7 +12,7 @@ export function Logo({ variant = "dark", className = "" }: Props) {
   return (
     <Link
       href="/"
-      aria-label="Fotogenic of Scotland — home"
+      aria-label="Fotogenic of Scotland. Home"
       className={`group inline-flex items-baseline gap-[0.6rem] ${color} ${className}`}
     >
       <span className="display text-[1.55rem] sm:text-[1.75rem] leading-none kerning-tight">

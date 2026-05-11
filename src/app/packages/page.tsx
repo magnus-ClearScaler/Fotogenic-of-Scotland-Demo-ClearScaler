@@ -7,7 +7,7 @@ import { packages } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Wedding Photography Packages",
   description:
-    "Wedding photography packages from Fotogenic of Scotland — Digital, Box, Classic Album and Storybook. Glasgow & Edinburgh studio, Scotland and destination weddings.",
+    "Wedding photography packages from Fotogenic of Scotland. Digital, Box, Classic Album and Storybook. Glasgow and Edinburgh studio, Scotland and destination weddings.",
 };
 
 export default function PackagesPage() {
@@ -17,8 +17,8 @@ export default function PackagesPage() {
         eyebrow="Wedding packages"
         title={
           <>
-            Four ways to keep the day —
-            <em className="script text-burnish-deep"> all built around the album.</em>
+            Four ways to keep the day.
+            <em className="script text-burnish-deep"> All built around the album.</em>
           </>
         }
         intro="Pricing is tailored to the wedding. Send us the date, the venue and a sentence about the two of you, and we will reply with the full brochure and a quote within 24 hours."
@@ -155,10 +155,10 @@ export default function PackagesPage() {
               },
               {
                 q: "Are travel costs included?",
-                a: "Within the Scottish central belt, yes. Beyond, we add travel at cost — flights, an overnight stay if needed, fuel. No mark-ups.",
+                a: "Within the Scottish central belt, yes. Beyond, we add travel at cost. Flights, an overnight stay if needed, fuel. No mark-ups.",
               },
               {
-                q: "Two photographers — always?",
+                q: "Two photographers, always?",
                 a: "Always, on every package. A lead and a second. The lead handles the directed work, the second covers the moments that would otherwise be missed.",
               },
               {
