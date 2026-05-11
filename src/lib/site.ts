@@ -1,3 +1,5 @@
+import { galleries } from "./galleries";
+
 export const site = {
   name: "Fotogenic of Scotland",
   tagline: "Wedding & lifestyle photography & film, Scotland",
@@ -72,8 +74,6 @@ export const services = [
   },
 ] as const;
 
-import { galleries } from "./galleries";
-
 export type FeaturedWedding = {
   slug: string;
   couple: string;
@@ -89,6 +89,27 @@ export type FeaturedWedding = {
 function pickCover(slug: string, index: number): string {
   const g = galleries[slug];
   return g?.[index] ?? g?.[0] ?? "";
+}
+
+const heroPortraits: Record<string, string> = {
+  "alexandra-angus-mount-stuart":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2020/01/13-7730-post/Mount-Stuart-Wedding-Photos-101-1.jpg",
+  "sarah-robert-ardkinglas-house":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2017/02/11-3483-post/Wedding-Photographers-Glasgow-100-1.jpg",
+  "kerry-fraser-lochgreen":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2023/03/17-12044-post/Lochgreen-Wedding-Photos-Ayrshire-Glasgow-Edinburgh-Scotland-10.jpg",
+  "hannah-alexander-dumfries-house":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2020/03/27-8698-post/Dumfries-House-Wedding-Photos-1Day-19.jpg",
+  "victoria-david-cornhill-castle":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2023/03/15-11922-post/Wedding-Cornhill-Castle-Glasgow-Edinburgh-Scotland-Photographer-10.jpg",
+  "christa-jamie-crear":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2017/03/22-4656-post/Wedding-Photographers-Scotland-10.jpg",
+  "india-gareth-glencoe-engagement":
+    "https://fotogenicofscotland.co.uk/wp-content/uploads/2020/01/10-7627-post/Engagement-Photographer-Scotland-1.jpg",
+};
+
+function pickHero(slug: string): string {
+  return heroPortraits[slug] ?? pickCover(slug, 0);
 }
 
 export const featuredWeddings: readonly FeaturedWedding[] = [
@@ -110,7 +131,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Album", value: "Storybook, 12 x 12 layflat" },
     ],
     cover: pickCover("alexandra-angus-mount-stuart", 0),
-    hero: pickCover("alexandra-angus-mount-stuart", 5),
+    hero: pickHero("alexandra-angus-mount-stuart"),
   },
   {
     slug: "sarah-robert-ardkinglas-house",
@@ -129,7 +150,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Album", value: "Classic Album, leather" },
     ],
     cover: pickCover("sarah-robert-ardkinglas-house", 0),
-    hero: pickCover("sarah-robert-ardkinglas-house", 8),
+    hero: pickHero("sarah-robert-ardkinglas-house"),
   },
   {
     slug: "kerry-fraser-lochgreen",
@@ -148,7 +169,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Album", value: "Box, 50 archival prints" },
     ],
     cover: pickCover("kerry-fraser-lochgreen", 0),
-    hero: pickCover("kerry-fraser-lochgreen", 6),
+    hero: pickHero("kerry-fraser-lochgreen"),
   },
   {
     slug: "hannah-alexander-dumfries-house",
@@ -167,7 +188,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Album", value: "Storybook, 12 x 12, 40 spreads" },
     ],
     cover: pickCover("hannah-alexander-dumfries-house", 0),
-    hero: pickCover("hannah-alexander-dumfries-house", 10),
+    hero: pickHero("hannah-alexander-dumfries-house"),
   },
   {
     slug: "victoria-david-cornhill-castle",
@@ -186,7 +207,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Album", value: "Classic Album, linen" },
     ],
     cover: pickCover("victoria-david-cornhill-castle", 0),
-    hero: pickCover("victoria-david-cornhill-castle", 7),
+    hero: pickHero("victoria-david-cornhill-castle"),
   },
   {
     slug: "christa-jamie-crear",
@@ -205,7 +226,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Album", value: "Storybook, 12 x 12 layflat" },
     ],
     cover: pickCover("christa-jamie-crear", 0),
-    hero: pickCover("christa-jamie-crear", 6),
+    hero: pickHero("christa-jamie-crear"),
   },
   {
     slug: "india-gareth-glencoe-engagement",
@@ -224,7 +245,7 @@ export const featuredWeddings: readonly FeaturedWedding[] = [
       { label: "Output", value: "Digital gallery, fine art prints" },
     ],
     cover: pickCover("india-gareth-glencoe-engagement", 0),
-    hero: pickCover("india-gareth-glencoe-engagement", 12),
+    hero: pickHero("india-gareth-glencoe-engagement"),
   },
 ] as const;
 
