@@ -25,9 +25,9 @@ export function ServicesSection() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 280px"
                   className="object-cover"
-                  quality={84}
+                  quality={78}
                 />
               </div>
               <h3 className="display text-[1.25rem] lg:text-[1.5rem] mt-5 text-ink kerning-tight group-hover:text-burnish-deep transition-colors">

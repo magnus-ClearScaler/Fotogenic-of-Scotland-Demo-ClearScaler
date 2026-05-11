@@ -24,44 +24,30 @@ export default function WeddingsPage() {
       </section>
 
       <section className="bg-cream pb-24 lg:pb-32">
-        <div className="mx-auto max-w-[1500px] px-4 lg:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
+        <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
             {featuredWeddings.map((w, idx) => (
               <Link
                 key={w.slug}
                 href={`/weddings/${w.slug}`}
-                className={`group block ${
-                  idx === 0 || idx === 5 ? "lg:col-span-2" : ""
-                }`}
+                className="group block"
               >
-                <div
-                  className={`image-frame relative ${
-                    idx === 0 || idx === 5
-                      ? "aspect-[21/9]"
-                      : idx % 2 === 1
-                        ? "aspect-[4/5]"
-                        : "aspect-[5/6]"
-                  }`}
-                >
+                <div className="image-frame aspect-[2/3] relative">
                   <Image
-                    src={w.cover}
+                    src={w.hero || w.cover}
                     alt={`${w.couple} at ${w.venue}`}
                     fill
-                    sizes={
-                      idx === 0 || idx === 5
-                        ? "100vw"
-                        : "(max-width: 1024px) 100vw, 50vw"
-                    }
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
                     className="object-cover"
-                    loading={idx < 2 ? "eager" : "lazy"}
-                    quality={86}
+                    loading={idx < 3 ? "eager" : "lazy"}
+                    quality={80}
                   />
                 </div>
-                <div className="mt-6 flex items-baseline justify-between gap-6">
-                  <h2 className="display text-[1.65rem] lg:text-[2rem] text-ink kerning-tight group-hover:text-burnish-deep transition-colors">
+                <div className="mt-5 flex items-baseline justify-between gap-4">
+                  <h2 className="display text-[1.45rem] lg:text-[1.65rem] text-ink kerning-tight group-hover:text-burnish-deep transition-colors">
                     {w.couple}
                   </h2>
-                  <span className="text-[0.7rem] tracking-[0.28em] uppercase text-mute whitespace-nowrap">
+                  <span className="text-[0.65rem] tracking-[0.28em] uppercase text-mute whitespace-nowrap">
                     {w.venue}
                   </span>
                 </div>

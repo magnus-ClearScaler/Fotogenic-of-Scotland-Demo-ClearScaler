@@ -26,9 +26,9 @@ export function JournalPreview() {
                   src={post.image}
                   alt={post.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                   className="object-cover"
-                  quality={84}
+                  quality={80}
                 />
               </div>
               <h3 className="display text-[1.45rem] lg:text-[1.65rem] mt-6 text-ink leading-[1.2] kerning-tight group-hover:text-burnish-deep transition-colors">

@@ -64,16 +64,16 @@ export default async function WeddingDetail({
       </section>
 
       <section className="bg-cream pb-16 lg:pb-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-          <div className="image-frame aspect-[4/5] sm:aspect-[3/2] lg:aspect-[21/10] relative">
+        <div className="mx-auto max-w-[680px] px-6">
+          <div className="image-frame aspect-[2/3] relative">
             <Image
               src={wedding.hero || wedding.cover}
               alt={`${wedding.couple} at ${wedding.venue}`}
               fill
               priority
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 680px"
               className="object-cover"
-              quality={90}
+              quality={82}
             />
           </div>
         </div>
@@ -108,28 +108,26 @@ export default async function WeddingDetail({
       </section>
 
       <section className="bg-paper-warm py-24 lg:py-32 border-t border-line-soft">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-          <Link href={`/weddings/${next.slug}`} className="group block">
-            <p className="eyebrow text-center">Next wedding</p>
-            <div className="image-frame aspect-[21/10] relative mt-10">
+        <div className="mx-auto max-w-[680px] px-6 text-center">
+          <p className="eyebrow">Next wedding</p>
+          <Link href={`/weddings/${next.slug}`} className="group block mt-10">
+            <div className="image-frame aspect-[2/3] relative">
               <Image
-                src={next.cover}
+                src={next.hero || next.cover}
                 alt={`${next.couple} at ${next.venue}`}
                 fill
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 680px"
                 className="object-cover"
-                quality={86}
+                quality={82}
               />
               <div className="absolute inset-0 bg-ink/15 transition-colors duration-500 group-hover:bg-ink/0" />
             </div>
-            <div className="mt-8 text-center">
-              <h2 className="display text-[2.4rem] lg:text-[3.4rem] text-ink kerning-tight group-hover:text-burnish-deep transition-colors">
-                {next.couple}
-              </h2>
-              <p className="script text-burnish-deep text-[1.4rem] lg:text-[1.8rem] mt-1">
-                at {next.venue}
-              </p>
-            </div>
+            <h2 className="display text-[2.4rem] lg:text-[3rem] text-ink kerning-tight group-hover:text-burnish-deep transition-colors mt-8">
+              {next.couple}
+            </h2>
+            <p className="script text-burnish-deep text-[1.4rem] lg:text-[1.7rem] mt-1">
+              at {next.venue}
+            </p>
           </Link>
         </div>
       </section>
